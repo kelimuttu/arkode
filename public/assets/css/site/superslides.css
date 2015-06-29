@@ -1,0 +1,170 @@
+#slides {
+  position: relative;
+}
+#slides .slides-container {
+  display: none;
+}
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  top: 46%;
+  width: 100%;
+  background: none;
+}
+
+.slides-navigation a {
+  position: absolute;
+  display: block;
+}
+.slides-navigation a.prev {
+  left: 0;
+}
+.slides-navigation a.next {
+  right: 0;
+}
+
+.slides-pagination {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background : none;
+    padding-bottom : 10px;
+}
+
+.slides-pagination a {
+width: 12px;
+height: 12px;
+vertical-align: middle;
+*vertical-align: auto;
+zoom: 1;
+margin: 20px;
+overflow: hidden;
+text-indent: -100%;
+}
+
+
+.slides-pagination a {
+  border: 2px solid #3e80c2;
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  
+  margin: 2px;
+  overflow: hidden;
+  text-indent: -100%;
+}
+
+.slides-pagination a.current {
+  background: #3e80c2;
+}
+
+/*
+
+body {
+  color: #eee;
+  background: #555;
+}
+
+
+
+
+
+
+.navigation {
+  background: #00f;
+  width: 300px;
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  list-style-type:none;
+}
+
+li {
+  text-align: center;
+  display: inline;
+}
+li .current {
+  background: #ff0;
+
+}
+li .current {
+  background: #0ff;
+}
+
+
+
+
+
+
+
+#slides {
+  position: relative;
+}
+#slides .slides-container {
+  display: none;
+}
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  width: 100%;
+}
+.slides-navigation a {
+  position: absolute;
+  display: block;
+}
+.slides-navigation a.prev {
+  left: 15px;
+}
+.slides-navigation a.next {
+  right: 15px;
+}
+
+
+*/
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+

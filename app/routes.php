@@ -1,44 +1,51 @@
 <?php
 
+Route::get('/', array('uses'=>'HomepageController@index'));
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+Route::get('/', function(){
+	return View::make('homepage');
+});*/
 
-Route::get('index', function()
+Route::get('/admin', function()
 {
- return View::make('index');
+	if(Session::has('logged_in') && Session::get('logged_in')=='1')
+	{
+		return View::make('backend.dashboard');
+	}
+	else
+	{
+		return View::make('landing_page');
+	}
 });
 
-Route::get('dashboard', function()
-{
- return View::make('dashboard');
+Route::get('/dashboard', function(){
+	return View::make('backend.dashboard');
 });
 
-Route::get('dashboard/intro', function()
-{
- return View::make('intro');
+Route::post('/login', array('before'=>'csrf', 'uses'=>'UserController@proses_login'));
+Route::get('/logout', function(){
+	Session::flush();
+	return Redirect::to('/admin');
 });
 
-Route::get('dashboard/about', function()
-{
- return View::make('about');
-});
+Route::get('dashboard/intro', array('uses'=>'SliderController@index'));
+Route::post('dashboard/intro/upload', array('uses'=>'SliderController@upload'));
+Route::get('/dashboard/intro/update/{id}', array('uses'=>'SliderController@edit'));
+Route::post('/dashboard/intro/update/{id}', array('uses'=>'SliderController@update'));
+Route::post('/dashboard/intro/hapus/{id}', array('uses'=>'SliderController@hapus'));
+//Route::get('/dashboard/intro/hapus/{id}', array('uses'=>'SliderController@hapus'));
 
-Route::get('dashboard/games', function()
-{
- return View::make('games');
+Route::get('dashboard/about', function(){
+ return View::make('backend.about');
 });
+Route::get('dashboard/about/edit/{id}', array('uses'=>'AboutController@edit'));
+Route::post('/dashboard/about/doupdate', array('uses'=>'AboutController@doEdit'));
 
-Route::get('/', 'AboutController@index');
-Route::post('dashboard/input', 'AboutController@input');
-Route::get('dashboard/hapus/{id}', 'AboutController@hapus');
-Route::get('dashboard/edit/{id}', 'AboutController@edit');
-Route::post('dashboard/doupdate', 'AboutController@doEdit');
-//Route::post('dashboard/update', 'AboutController@update');
+Route::get('dashboard/games', array('uses'=>'GamesController@index'));
+Route::get('dashboard/games/tambah', array('uses'=>'GamesController@tambah'));
+Route::post('dashboard/games/tambah', array('uses'=>'GamesController@simpan_game'));
+Route::get('/games/{slug}', array('uses'=>'GamesController@baca'));
+//Route::get('/dashboard/games/hapus/{id}', array('uses'=>'GamesController@hapus'));
+Route::get('/dashboard/games/edit/{id}', array('uses'=>'GamesController@edit'));
+Route::post('/dashboard/games/edit/{id}', array('uses'=>'GamesController@update_games'));
+Route::post('/dashboard/games/hapus/{id}', array('uses'=>'GamesController@hapus'));

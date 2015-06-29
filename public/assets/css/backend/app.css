@@ -1,0 +1,104 @@
+/*****************************************************
+Dashboard Quote
+******************************************************/
+.centered-text {
+  text-align: center;
+}
+
+.margin {
+  margin-top: 100px;
+}
+
+.quote-marks {
+  font-size: 100px;
+  font-family: Garamond;
+  color: #777;
+}
+
+.move-right {
+  position: relative;
+  text-align: right;
+}
+
+.quote {
+  border-radius: 5px;
+}
+
+.quote p {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 40em) {
+  .quote p {
+    padding-left: 20px;
+  }
+}
+
+.student {
+  margin-left: 25px;
+  margin-bottom: 80px;
+}
+.student .photo {
+  /*background-color: #ccc;*/ 
+  border-radius: 100px;
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 15px;
+}
+.student p {
+  position: relative;
+  top: 5px;
+}
+.student p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.student p:nth-child(3) {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+}            
+
+/*****************************************************
+Container
+******************************************************/
+
+.container{
+    margin-top: 50px;
+  }
+  hr{
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+  h5{
+    font-weight: 300;
+  }
+  .bold {
+    font-weight: 700;
+  }
+  p{
+    color: #666;
+    font-weight: 300;
+  }
+  
+  .icon{
+    font-size: 40px;
+    color: #ccc;
+  }      
+  
+/*****************************************************
+Copyright
+******************************************************/
+
+#copyright {
+  z-index: 300;
+  padding: 1px 0px;
+}
+
+.copyright p {
+  color: #777;
+  font-size: 12px;
+}

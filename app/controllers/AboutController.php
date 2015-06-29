@@ -15,7 +15,7 @@ class AboutController extends Controller {
 	protected function index()
 	{
 		$data = $this->about->getDataAbout();
-            return View::make('dashboard')
+            return View::make('landing_page')
                         ->with('data', $data);
 	}
 
